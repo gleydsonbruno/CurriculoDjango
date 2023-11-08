@@ -118,12 +118,12 @@
   flex: 1;
   margin: 0 !important;
   position: absolute;
-  top: 16px;
-  left: 87.62px;
+  top: 25px;
+  left: 70.62px;
   display: flex;
   justify-content: flex-start;
   z-index: 1;
-  font-size: var(--font-size-6xl);
+  font-size: 20px;
 }
 .navbar-2-parent {
   padding: 0 0 0 var(--padding-2xs);
@@ -201,7 +201,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: 45px;
+  gap: 5px;
   text-align: left;
   font-size: var(--text-regular-semi-bold-size);
   color: var(--black);
@@ -233,7 +233,6 @@
   top: 115px;
   left: 196px;
   font-size: var(--font-size-xs);
-  line-height: 140%;
   font-weight: 300;
   display: inline-block;
   width: 200px;
@@ -255,6 +254,7 @@
   left: 0;
   line-height: 140%;
   font-weight: 500;
+
 }
 .habilidade-child {
   position: absolute;
@@ -264,7 +264,7 @@
   right: -4.6%;
   bottom: -8%;
   left: -27.59%;
-  border: 1px solid var(--color-dimgray);
+
   box-sizing: border-box;
 }
 .frame8,
@@ -277,7 +277,7 @@
 }
 .frame8 {
   top: 0;
-  left: 152px;
+  left: 156px;
   border: 1px solid var(--color-dimgray);
   box-sizing: border-box;
   width: 289px;
@@ -316,8 +316,7 @@
   align-items: center;
   justify-content: center;
 }
-.frame-child,
-.frame10 {
+.frame-child {
   border: 1px solid var(--color-dimgray);
   box-sizing: border-box;
 }
@@ -357,7 +356,7 @@
 }
 .frame-icon1,
 .frame13 {
-  width: 115px;
+  width: 100px;
   height: 28px;
   flex-shrink: 0;
 }
@@ -371,7 +370,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   padding: 0 4px 0 24px;
-  box-sizing: border-box;
+
 }
 .frame12,
 .frame13,
@@ -397,7 +396,7 @@
   align-items: center;
   justify-content: space-between;
 }
-.dshsghsfghsfghsfghsfghsfghdshs1 {
+.texto-descricao {
   align-self: stretch;
   position: relative;
   line-height: 140%;
@@ -444,6 +443,7 @@
   width: 289px;
   overflow: hidden;
   padding: 0 93px;
+
 }
 .frame-group {
   width: 630px;
@@ -655,12 +655,8 @@
 .proif2 {
   margin: 0 !important;
   position: absolute;
-  top: 48.94px;
-  left: 695.67px;
+  top: 150px;
   font-size: inherit;
-  line-height: 150%;
-  display: inline-block;
-  width: 63px;
   z-index: 0;
   font-family: inherit;
 }
