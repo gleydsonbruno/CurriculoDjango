@@ -1,9 +1,13 @@
 from django.urls import path
 
-from .views import index, contato
+from .views import index, curriculo_gley, curriculo_nat, curriculo_helo, curriculo_eliel, curriculo_glyc
 
 urlpatterns = [
     path('',index),
-    path('contato',contato),
+    path('curriculo_gley',curriculo_gley),
+    path('curriculo_nat',curriculo_nat),
+    path('curriculo_helo',curriculo_helo),
+    path('curriculo_eliel',curriculo_eliel),
+    path('curriculo_glyc',curriculo_glyc),
 
 ]

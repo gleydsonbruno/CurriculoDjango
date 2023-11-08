@@ -1,0 +1,159 @@
+
+
+.perfil {
+
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.perfil-foto {
+
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    border: 4px solid #000000;
+
+}
+
+.texto {
+    position: absolute;
+    top: 350px;
+    font-size: 20px;
+    font-family: Helvetica;
+}
+
+.retangulo-con {
+    position: relative;
+    display: flex;
+    bottom: -60px;
+    padding-left: 150px;
+    font-family: Helvetica;
+    font-size: 30px;
+    background-color: #ff88ff;
+    width: 470px;
+    margin-left: 40px;
+    z-index: 1;
+}
+
+.retangulo-cur {
+    position: relative;
+    display: flex;
+    bottom: -420px;
+    padding-left: 150px;
+    font-family: Helvetica;
+    font-size: 30px;
+    background-color: #ff88ff;
+    width: 470px;
+    margin-left: 40px;
+    z-index: 1;
+}
+
+.retangulo-edu {
+    position: relative;
+    display: flex;
+    bottom: -750px;
+    padding-left: 150px;
+    font-family: Helvetica;
+    font-size: 30px;
+    background-color: #ff88ff;
+    width: 470px;
+    margin-left: 40px;
+    z-index: 1;
+}
+
+.retangulo-exp {
+    position: absolute;
+    display: flex;
+    padding-left: 150px;
+    font-family: Helvetica;
+    font-size: 30px;
+    background-color: #ff88ff;
+    width: 470px;
+    margin-left: 40px;
+    z-index: 1;
+}
+
+.retangulo-for {
+    position: absolute;
+    display: flex;
+    bottom: 340px;
+    left: 690px;
+    padding-left: 150px;
+    font-family: Helvetica;
+    font-size: 30px;
+    background-color: #ff1199;
+    width: 450px;
+    margin-left: 40px;
+    z-index: 1;
+}
+
+.retangulo-pro {
+    position: relative;
+    display: flex;
+    bottom: px;
+    left: 690px;
+    padding-left: 150px;
+    font-family: Helvetica;
+    font-size: 30px;
+    background-color: #ff1199;
+    width: 450px;
+    margin-left: 40px;
+    z-index: 1;
+}
+
+.retangulo-qua {
+    position: relative;
+    display: flex;
+    bottom: -350px;
+    left: 690px;
+    padding-left: 150px;
+    font-family: Helvetica;
+    font-size: 30px;
+    background-color: #ff1199;
+    width: 450px;
+    margin-left: 40px;
+    z-index: 1;
+}
+
+.retangulo-8 {
+    position: relative;
+    display: flex;
+    bottom: 120px;
+    left: 690px;
+    padding-left: 150px;
+    font-family: Helvetica;
+    font-size: 30px;
+    background-color: #ff1199;
+    width: 450px;
+    margin-left: 40px;
+    z-index: 1;
+}
+
+.texto-retangulo {
+    position: relative;
+    font-size: 25px;
+    text-align: center;
+    padding-left: 70px;
+}
+
+.linha-vertical {
+    position: absolute;
+    border-left: 1px solid #000;
+    height: 1300px;
+    margin: 0 20px;
+    left: 49%;
+    top: 450px;
+}
+
+.content {
+    position: relative;
+    top: 70px;
+    left: 50px;
+    padding-bottom: 30px;
+    width: 50px;
+    z-index: 2;
+
+}
