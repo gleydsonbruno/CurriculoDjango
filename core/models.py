@@ -27,3 +27,5 @@ class Curriculo(models.Model):
     experiencia = models.TextField()
     educacao = models.TextField()
 
+    def __str__(self):
+        return f'{self.nome} - Currículo'

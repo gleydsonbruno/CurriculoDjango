@@ -13,14 +13,16 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
+
 .link {
   flex: 1;
 }
-.link,
-.link3 {
+
+.link, .link3 {
   position: relative;
   line-height: 150%;
 }
+
 .chevron-down-icon {
   position: relative;
   width: 24px;
@@ -225,7 +227,7 @@
   z-index: 0;
   font-size: var(--heading-h5-size);
 }
-.dshsghsfghsfghsfghsfghsfghdshs {
+.texto-descricao {
   position: absolute;
   margin: 0 !important;
   top: 115px;
@@ -234,7 +236,7 @@
   line-height: 140%;
   font-weight: 300;
   display: inline-block;
-  width: 276px;
+  width: 200px;
   height: 85px;
   flex-shrink: 0;
   z-index: 1;

@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
+from .forms import SolicitacaoCurriculoForm
 
 def index (request):
     
@@ -21,3 +22,14 @@ def curriculo_helo (request):
 def curriculo_glyc (request):
     return render(request,'curriculo_glyc.html')
 
+
+def solicitar(request):
+    if request.method == 'POST':
+        form = SolicitacaoCurriculoForm(request.POST)
+        if form.is_valid():
+            print('dando certo')
+
+    else:
+        form = SolicitacaoCurriculoForm()
+
+    return render(request, 'formulario.html', {'form': form})

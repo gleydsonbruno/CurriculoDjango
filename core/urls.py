@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import index, curriculo_gley, curriculo_nat, curriculo_helo, curriculo_eliel, curriculo_glyc
+from .views import index, curriculo_gley, curriculo_nat, curriculo_helo, curriculo_eliel, curriculo_glyc, solicitar
 
 urlpatterns = [
     path('',index),
@@ -9,5 +9,6 @@ urlpatterns = [
     path('curriculo_helo',curriculo_helo),
     path('curriculo_eliel',curriculo_eliel),
     path('curriculo_glyc',curriculo_glyc),
+    path('solicitar', solicitar),
 
 ]
