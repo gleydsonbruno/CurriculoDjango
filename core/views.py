@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 def index (request):
     
@@ -20,3 +20,4 @@ def curriculo_helo (request):
 
 def curriculo_glyc (request):
     return render(request,'curriculo_glyc.html')
+

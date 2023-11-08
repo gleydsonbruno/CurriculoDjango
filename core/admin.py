@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from.models import Produto, Cliente
+from.models import Produto, Cliente, Curriculo
 
 
 class ProdutoAdmin(admin.ModelAdmin):
@@ -13,3 +13,4 @@ class ClienteAdmin(admin.ModelAdmin):
 
 admin.site.register(Produto,ProdutoAdmin)
 admin.site.register(Cliente,ClienteAdmin)
+admin.site.register(Curriculo)
