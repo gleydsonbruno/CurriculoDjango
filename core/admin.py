@@ -1,16 +1,16 @@
 from django.contrib import admin
 
-from.models import Produto, Cliente, Curriculo
+from.models import Curriculo
 
 
-class ProdutoAdmin(admin.ModelAdmin):
-    list_display = ("nome","preco", "estoque")
+#class ProdutoAdmin(admin.ModelAdmin):
+#    list_display = ("nome","preco", "estoque")
 
 
-class ClienteAdmin(admin.ModelAdmin):
-    list_display = ("nome", "sobrenome", "email")
+#class ClienteAdmin(admin.ModelAdmin):
+#    list_display = ("nome", "sobrenome", "email")
 
 
-admin.site.register(Produto,ProdutoAdmin)
-admin.site.register(Cliente,ClienteAdmin)
+#admin.site.register(Produto,ProdutoAdmin)
+#admin.site.register(Cliente,ClienteAdmin)
 admin.site.register(Curriculo)

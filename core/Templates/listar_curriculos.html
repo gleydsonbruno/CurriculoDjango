@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Curriculos</title>
+</head>
+<body>
+
+<h2>Lista de Curriculos</h2>
+<ul>
+    {% if curriculos %}
+    <ul>
+        {% for curriculo in curriculos %}
+            <li>{{ curriculo.nome }} - {{ curriculo.sobrenome }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>Nenhum currículo disponível no momento.</p>
+    {% endif %}
+</ul>
+
+</body>
+</html>

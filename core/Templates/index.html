@@ -1,132 +1,142 @@
 {% load static %}
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static  'css/styleguide.css'%}" />
-    <link rel="stylesheet" href="{% static 'css/style.css'%}" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static  'css/styleguide.css'%}" />
+  <link rel="stylesheet" href="{% static 'css/style.css'%}" />
   <link rel="stylesheet" href="{% static 'css/globals.css'%}" />
-    <title>ProIF</title>
+  <title>ProIF</title>
 </head>
 
 <body>
-    <div class="desktop">
-      <div class="frame">
-        <div class="navbar">
-          <div class="container">
-            <img class="column" src="{% static 'img/column.png' %}" />
-            <div class="div">
-              <div class="link">Projetos</div>
-              <div class="link">Sobre</div>
-              <div class="link">Contato</div>
-            </div>
-            <div class="button-wrapper">
+  <div class="desktop">
+    <div class="frame">
+      <div class="navbar">
+        <div class="container">
+          <img class="column" src="{% static 'img/column.png' %}" />
+          <div class="div">
+            <div class="link">Projetos</div>
+            <div class="link">Sobre</div>
+            <div class="link">Contato</div>
+          </div>
+          <div class="button-wrapper">
+            <a href="{% url 'formulario' %}">
               <button class="button"><button class="text-wrapper">Participar</button></button>
-            </div>
+            </a>
+
           </div>
         </div>
       </div>
-      <div class="frame-2">
-        <p class="INSPIRANDO-MUDAN-AS">
-          <span class="span">INSPIRANDO MUDANÇAS,<br />CULTIVANDO </span>
-          <span class="text-wrapper-2">TALENTOS</span>
-          <span class="span">.</span>
-        </p>
-        <div class="frame-3">
-          <div class="select">
-            <div class="select-2">
-              <div class="select-one">Selecione o curso</div>
-              <img class="img" src="{% static 'img/icon-chevron-down-2.svg' %}" />
-            </div>
+    </div>
+    <div class="frame-2">
+      <p class="INSPIRANDO-MUDAN-AS">
+        <span class="span">INSPIRANDO MUDANÇAS,<br />CULTIVANDO </span>
+        <span class="text-wrapper-2">TALENTOS</span>
+        <span class="span">.</span>
+      </p>
+      <div class="frame-3">
+        <div class="select">
+          <div class="select-2">
+            <div class="select-one">Selecione o curso</div>
+            <img class="img" src="{% static 'img/icon-chevron-down-2.svg' %}" />
           </div>
-          <div class="select">
-            <div class="select-2">
-              <div class="select-one">Selecione o período</div>
-              <img class="img" src="{% static 'img/icon-chevron-down-2.svg' %}" />
-            </div>
+        </div>
+        <div class="select">
+          <div class="select-2">
+            <div class="select-one">Selecione o período</div>
+            <img class="img" src="{% static 'img/icon-chevron-down-2.svg' %}" />
           </div>
+        </div>
+        <a href="{%url 'listar_curriculos'%}">
           <button class="div-wrapper"><button class="button-2">Explorar</button></button>
+        </a>
+        
+      </div>
+    </div>
+    <div class="frame-4">
+      <div class="text-wrapper-3">3º Período</div>
+    </div>
+    <div class="frame-5">
+      <div class="tooltip-top">
+        <div class="tooltip">
+          <div class="content">
+            <a href="/curriculo_nat"><img class="placeholder-image" src="{% static 'img/natalia.png' %}" /></a>
+            <div class="frame-6">
+              <div class="content-2">
+                <div class="text-wrapper-4">Natália Kelly</div>
+                <p class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+              <div class="actions">
+                <button class="button-3">
+                  <button class="button-4">Descubra mais</button> <img class="img"
+                    src="{% static 'img/icon-chevron-right-3.svg' %}" />
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="frame-4"><div class="text-wrapper-3">3º Período</div></div>
-      <div class="frame-5">
-        <div class="tooltip-top">
-          <div class="tooltip">
-            <div class="content">
-              <a href="/curriculo_nat"><img class="placeholder-image" src="{% static 'img/natalia.png' %}" /></a>
-              <div class="frame-6">
-                <div class="content-2">
-                  <div class="text-wrapper-4">Natália Kelly</div>
-                  <p class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                <div class="actions">
-                  <button class="button-3">
-                    <button class="button-4">Descubra mais</button> <img class="img" src="{% static 'img/icon-chevron-right-3.svg' %}" />
-                  </button>
-                </div>
+      <div class="tooltip-wrapper">
+        <div class="tooltip">
+          <div class="content">
+            <a href="/curriculo_gley"><img class="placeholder-image-2" src="{% static 'img/gleydson.png' %}" /></a>
+            <div class="frame-6">
+              <div class="content-2">
+                <div class="text-wrapper-4">Gleydson Araujo</div>
+                <p class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+              <div class="actions">
+                <button class="button-3">
+                  <button class="button-4">Descubra mais</button> <img class="img"
+                    src="{% static 'img/icon-chevron-right-1.svg' %}" />
+                </button>
               </div>
             </div>
           </div>
         </div>
-        <div class="tooltip-wrapper">
-          <div class="tooltip">
-            <div class="content">
-              <a href="/curriculo_gley"><img class="placeholder-image-2" src="{% static 'img/gleydson.png' %}" /></a>
-              <div class="frame-6">
-                <div class="content-2">
-                  <div class="text-wrapper-4">Gleydson Araujo</div>
-                  <p class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                <div class="actions">
-                  <button class="button-3">
-                    <button class="button-4">Descubra mais</button> <img class="img" src="{% static 'img/icon-chevron-right-1.svg' %}" />
-                  </button>
-                </div>
+      </div>
+      <div class="tooltip-top-2">
+        <div class="tooltip">
+          <div class="content">
+            <a href="/curriculo_helo"><img class="placeholder-image-2" src="{% static 'img/heloisa.png' %}" /></a>
+            <div class="frame-6">
+              <div class="content-2">
+                <div class="text-wrapper-4">Heloiza Felix</div>
+                <p class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+              <div class="actions">
+                <button class="button-3">
+                  <button class="button-4">Descubra mais</button> <img class="img"
+                    src="{% static 'img/icon-chevron-right-3.svg' %}" />
+                </button>
               </div>
             </div>
           </div>
         </div>
-        <div class="tooltip-top-2">
-          <div class="tooltip">
-            <div class="content">
-              <a href="/curriculo_helo"><img class="placeholder-image-2" src="{% static 'img/heloisa.png' %}" /></a>
-              <div class="frame-6">
-                <div class="content-2">
-                  <div class="text-wrapper-4">Heloiza Felix</div>
-                  <p class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                <div class="actions">
-                  <button class="button-3">
-                    <button class="button-4">Descubra mais</button> <img class="img" src="{% static 'img/icon-chevron-right-3.svg' %}" />
-                  </button>
-                </div>
+      </div>
+      <div class="tooltip-top-3">
+        <div class="tooltip">
+          <div class="content">
+            <a href="/curriculo_eliel"><img class="placeholder-image" src="{% static 'img/eliel.png' %}" /></a>
+            <div class="frame-6">
+              <div class="content-2">
+                <div class="text-wrapper-4">Eliel Ferreira</div>
+                <p class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="tooltip-top-3">
-          <div class="tooltip">
-            <div class="content">
-              <a href="/curriculo_eliel"><img class="placeholder-image" src="{% static 'img/eliel.png' %}" /></a>
-              <div class="frame-6">
-                <div class="content-2">
-                  <div class="text-wrapper-4">Eliel Ferreira</div>
-                  <p class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                <div class="actions">
-                  <button class="button-3">
-                    <button class="button-4">Descubra mais</button> <img class="img" src="{% static 'img/icon-chevron-right-2.svg' %}" />
-                  </button>
-                </div>
+              <div class="actions">
+                <button class="button-3">
+                  <button class="button-4">Descubra mais</button> <img class="img"
+                    src="{% static 'img/icon-chevron-right-2.svg' %}" />
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 </body>
 
 </html>
-
-
-
