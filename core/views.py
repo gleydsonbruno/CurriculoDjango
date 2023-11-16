@@ -6,7 +6,11 @@ def index (request):
     context = {
         'curso': 'programação web com django e framework'
     }
-    return render(request,'index.html')
+
+    #return render(request,'index.html')
+    return render(request, 'novo_index.html')
+    #return render(request, 'novo_index_copy.html')
+
 def curriculo_nat (request):
     return render(request,'curriculo_nat.html')
 
@@ -24,7 +28,7 @@ def curriculo_glyc (request):
 
 def formulario(request):
     if request.method == 'POST':
-        form = CurriculoForm(request.POST)
+        form = CurriculoForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('/') 
@@ -35,3 +39,11 @@ def formulario(request):
 def listar_curriculos(request):
     curriculos = Curriculo.objects.all
     return render(request, 'listar_curriculos.html', {'curriculos': curriculos})
+
+def detalhes_apresentacao(request):
+    resumo = Curriculo.objects.all
+    return render(request, 'curriculo.html', {'curriculos': resumo})
+
+def carrossel_fotos(request):
+    photos = Curriculo.objects.all()
+    return render(request, 'novo_index.html', {'photos': photos})

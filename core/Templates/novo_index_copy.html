@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Exemplo Bootstrap</title>
+
+    <!-- Adicione o link para o Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    
+
+    
+    <style>
+        /* Adicione estilos personalizados aqui, se necessário */
+
+        /* Estilo para o container principal */
+        .main-container {
+            background-color: #f8f9fa; /* Fundo cinza */
+            padding: 20px; /* Espaçamento ao redor do conteúdo principal */
+            margin-top: 20px; /* Espaçamento acima do container */
+            min-height: calc(100vh - 40px); /* Altura mínima da tela menos o espaçamento superior e inferior */
+            position: relative;
+        }
+
+        /* Estilo para a barra de informações */
+        .info-bar {
+            background-color: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 15px; /* Espaçamento de 60px abaixo da frase */
+            margin-top: 50px;
+        }
+
+        /* Estilo para a barra de pesquisa */
+        .search-bar {
+            text-align: center;
+            padding: 10px; /* Reduzindo o espaçamento */
+            margin-bottom: 60px; /* Adicionando um espaçamento inferior */
+        }
+
+        .search-container {
+            max-width: 600px; /* Defina a largura máxima desejada */
+            margin: 0 auto; /* Centraliza a barra de pesquisa */
+            text-align: center; /* Alinha o texto ao centro */
+        }
+
+        .my_2 {
+            color: black;
+        }
+
+        .photo {
+            width: 300px ;
+            height: 300px;
+            margin: 20px 10px 0px 10px;
+
+            padding: 10px; /* Adiciona espaçamento fixo dentro da borda */
+            box-sizing: border-box; /* Garante que o padding não afete o tamanho total do elemento */
+            text-align: center;
+
+        }
+
+        .photo-img {
+            width: 100% ;
+            height: 100%;
+            max-width: 100%; /* Garante que a imagem não ultrapasse a largura da div */
+            height: auto; /* Garante que a altura seja ajustada proporcionalmente à largura */
+            object-fit: contain;
+        }
+
+        .photo p {
+            width: auto ;
+            height: auto;
+            margin: 10px 0;
+        }
+
+        .card {
+          margin-top: 20px;
+          background-color: #f8f9fa;
+          border: 1px solid #000;
+          border-radius: 5%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container main-container">
+
+        <!-- Barra de navegação -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">PROIF</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Principal <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'listar_curriculos' %}">Projetos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contato</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'formulario' %}">Participar</a>
+                  </li>
+                </ul>
+            </div>
+        </nav>
+        <hr class="my-2">
+        <!-- Frase acima da barra de pesquisa -->
+
+        <div class="info-bar">
+            <h2>INSPIRANDO MUDANÇAS,</h2>
+            <p>CULTIVANDO TALENTOS.</p>
+        </div>
+
+        <!-- Barra de pesquisa -->
+        <div class="search-container">
+            <div class="search-bar">
+                <input type="text" class="form-control" placeholder="Pesquisar">
+            </div>
+        </div>
+
+        <hr class="my-2">
+        
+        <!-- Carrossel de fotos -->
+        <div class="carousel">
+            {% for curriculo in curriculos %}
+                <div>
+                    <img src="{{ curriculo.foto.url }}" alt="{{ curriculo.nome }}">
+                    <p>{{ curriculo.nome }}</p>
+                    <p>{{ curriculo.resumo }}</p>
+                </div>
+            {% endfor %}
+        </div>
+        
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        
+        <script>
+            $(document).ready(function(){
+                $('.carousel').slick();
+            });
+        </script>
+      
+    
+    <!-- Adicione o link para o Bootstrap JS e o jQuery no final do corpo -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+</body>
+</html>
