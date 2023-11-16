@@ -10,7 +10,9 @@
     
     <style>
         /* Adicione estilos personalizados aqui, se necessário */
-
+        body {
+          background-color: #5c606471;
+        }
         /* Estilo para o container principal */
         .main-container {
             background-color: #f8f9fa; /* Fundo cinza */
@@ -18,6 +20,8 @@
             margin-top: 20px; /* Espaçamento acima do container */
             min-height: calc(100vh - 40px); /* Altura mínima da tela menos o espaçamento superior e inferior */
             position: relative;
+            border-radius: 5%;
+            margin-bottom: 20px;
         }
 
         /* Estilo para a barra de informações */
@@ -77,6 +81,19 @@
           border: 1px solid #000;
           border-radius: 5%;
         }
+
+        .carousel-slide {
+          margin-bottom: 50px;
+        }
+
+        .carousel-control-prev, .carousel-control-next {
+          color: #000;
+          background-color: #000;
+          position: absolute;
+          top: 600px;
+          height: 30px;
+          width: auto;
+        }
     </style>
 </head>
 <body>
@@ -92,16 +109,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Principal <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/">Principal <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Projetos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contato</a>
+                        <a class="nav-link" href="{% url 'formulario' %}">Contato</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Sobre</a>
+                        <a class="nav-link" href="{% url 'formulario' %}">Sobre</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="{% url 'formulario' %}">Participar</a>
@@ -127,7 +144,7 @@
         <hr class="my-2">
         
         <!-- Carrossel de fotos -->
-        <div id="photo-carousel" class="carousel slide" data-ride="carousel">
+        <div id="photo-carousel" class="carousel-slide" data-ride="carousel">
           <div class="carousel-inner">
               <div class="carousel-item active">
                   <div class="d-flex justify-content-around">

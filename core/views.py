@@ -8,8 +8,9 @@ def index (request):
     }
 
     #return render(request,'index.html')
-    return render(request, 'novo_index.html')
-    #return render(request, 'novo_index_copy.html')
+    #return render(request, 'novo_index.html')
+    return render(request, 'listar_curriculos.html')
+    #return render(request, 'index.html')
 
 def curriculo_nat (request):
     return render(request,'curriculo_nat.html')
@@ -39,11 +40,3 @@ def formulario(request):
 def listar_curriculos(request):
     curriculos = Curriculo.objects.all
     return render(request, 'listar_curriculos.html', {'curriculos': curriculos})
-
-def detalhes_apresentacao(request):
-    resumo = Curriculo.objects.all
-    return render(request, 'curriculo.html', {'curriculos': resumo})
-
-def carrossel_fotos(request):
-    photos = Curriculo.objects.all()
-    return render(request, 'novo_index.html', {'photos': photos})

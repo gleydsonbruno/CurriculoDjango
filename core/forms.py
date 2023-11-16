@@ -20,6 +20,6 @@ class CurriculoForm(forms.ModelForm):
             'empresa': forms.TextInput(attrs={'class': 'form-control', 'placeholder':'Nome da empresa'}),
             'cargo': forms.TextInput(attrs={'class': 'form-control', 'placeholder':'Cargo que exercia'}),
             'periodo': forms.TextInput(attrs={'class': 'form-control', 'placeholder':'Tempo que passou na empresa'}),
-             'foto': forms.ClearableFileInput(),
+            'foto': forms.ClearableFileInput(),
 
         }
