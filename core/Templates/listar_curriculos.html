@@ -9,16 +9,30 @@
     <!-- Inclua os links para os estilos do Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
+
+        .card-body {
+            margin: 0 5px 5px 5px;
+            padding: 0;
+            
+        }
+
         .img-card {
             max-width: 100%;
             height: auto;
+            
         }
 
         .card {
             height: 300px;
-            max-width: 300px; /* Ajuste conforme necessário */
+            max-width: 250px; /* Ajuste conforme necessário */
             max-height: 300px;
             margin: auto;
+            
+        }
+
+        .border-primary {
+            border-color: #000 !important;
+            
         }
 
         .carousel-item {
@@ -29,6 +43,7 @@
         body {
             margin-bottom: 40px; /* Ajuste conforme necessário */
             background-color: #b7c0b9; /* Cor de fundo cinza claro */
+            font-family: 'Roboto Condensed', sans-serif;
         }
 
         .page-container {
@@ -77,19 +92,49 @@
         .foto {
             width: 100%;
             height: 200px;
-            padding: 5px;
+            padding: 5px 5px 0 5px;
         }
 
         .card-title {
             margin: 0;
-            padding: 0;
+            padding: 0 5px 0 5px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
 
         .card-text {
             font-size: 12px;
             text-align: left;
-            margin: auto;
-            padding: auto;
+            margin: 0;
+            padding: 5px 0 0 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .btn {
+            width: 100%;
+            position: relative;
+            margin: 0;
+            padding: 0;
+            color: #ffffff;
+            background-color: darkgrey;
+            border-color: black;
+            border: none;
+        }
+
+        .modify {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .hr-card {
+            width: 100%;
+            background-color: #000;
+            color: #000;
+            margin: 0;
+            padding: 0;
         }
 
     </style>
@@ -143,12 +188,14 @@
     
         <!-- Barra de pesquisa personalizada -->
         <div class="custom-search">
-            <div class="input-group">
-                <input type="text" class="form-control form-control-sm" placeholder="Pesquisar...">
-                <div class="input-group-append">
-                    <button class="btn btn-outline-secondary btn-sm" type="button">Pesquisar</button>
+            <form method="get" action="{% url 'listar_curriculos' %}">
+                <div class="input-group">
+                    <input type="text" name="q" class="form-control form-control-sm" placeholder="Pesquisar...">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary btn-sm" type="submit">Pesquisar</button>
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
 
     <hr>
@@ -168,12 +215,19 @@
                                             <img src="{{ curriculo.foto.url }}" class="foto" alt="Foto do Currículo">
                                         {% endif %}
                                         <div class="card-body">
-                                            <h5 class="card-title">{{ curriculo.nome }}</h5>
+                                            <hr class="hr-card">
+                                            <h5 class="card-title">{{ curriculo.nome|title }}</h5>
+                                            <hr class="hr-card">
                                             <p class="card-text"><strong>Sobre mim:</strong> {{ curriculo.resumo }}</p>
                                             <p class="card-text"><strong>Habilidades:</strong> {{ curriculo.habilidades }}</p>
                                             
                                             <!-- Adicione outros campos do seu modelo aqui -->
+                                            
+
                                         </div>
+                                        <a href="{% url 'detalhes_curriculo' pk=curriculo.id %}"> 
+                                            <button type="button" class="btn btn-primary modify">Ler Mais</button>
+                                        </a>
                                     </div>
                                 </div>
                     {% if forloop.counter|divisibleby:4 or forloop.last %}

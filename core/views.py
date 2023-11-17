@@ -1,31 +1,14 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import CurriculoForm, Curriculo
+from django.views.generic import ListView
+
 
 def index (request):
-    
-    context = {
-        'curso': 'programação web com django e framework'
-    }
-
     #return render(request,'index.html')
     #return render(request, 'novo_index.html')
-    return render(request, 'listar_curriculos.html')
+    curriculos = Curriculo.objects.all
+    return render(request, 'listar_curriculos.html', {'curriculos': curriculos})
     #return render(request, 'index.html')
-
-def curriculo_nat (request):
-    return render(request,'curriculo_nat.html')
-
-def curriculo_gley (request):
-    return render(request,'curriculo_gley.html')
-
-def curriculo_eliel (request):
-    return render(request,'curriculo_eliel.html')
-
-def curriculo_helo (request):
-    return render(request,'curriculo_helo.html')
-
-def curriculo_glyc (request):
-    return render(request,'curriculo_glyc.html')
 
 def formulario(request):
     if request.method == 'POST':
@@ -40,3 +23,17 @@ def formulario(request):
 def listar_curriculos(request):
     curriculos = Curriculo.objects.all
     return render(request, 'listar_curriculos.html', {'curriculos': curriculos})
+
+def detalhes_curriculo(request, pk):
+    curriculo = get_object_or_404(Curriculo, pk=pk)
+    return render(request, 'curriculo.html', {'curriculo': curriculo})
+
+class CurriculoListView(ListView):
+    model = Curriculo
+    template_name = 'listar_curriculos.html'
+
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        if query:
+            return Curriculo.objects.filter(nome__icontains=query)
+        return Curriculo.objects.all()
