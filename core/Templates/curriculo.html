@@ -5,12 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Meu Currículo</title>
-  <!-- Adicione o link para o Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <!-- Estilos personalizados -->
   <style>
     body {
-      background-color: #c2c9c2; /* Fundo verde claro */
+      background-color: #c2c9c2; 
       margin: 0;
       padding: 0;
       min-height: 100vh;
@@ -19,18 +17,18 @@
       align-items: center;
     }
     .main-container {
-      background-color: #ffffff; /* Fundo branco */
-      padding: 40px; /* Espaçamento interno aumentado */
-      border-radius: 10px; /* Borda arredondada */
-      box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
+      background-color: #ffffff; 
+      padding: 40px; 
+      border-radius: 10px; 
+      box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.1);
       margin: 20px;
       width: 60%;
     }
     .profile-picture {
-      border-radius: 50%; /* Borda circular para a foto de perfil */
-      max-width: 150px; /* Largura máxima da foto */
-      height: auto; /* Altura automática proporcional */
-      margin-bottom: 20px; /* Espaçamento inferior da foto */
+      border-radius: 50%; 
+      max-width: 150px;
+      height: auto; 
+      margin-bottom: 20px; 
     }
     .skill {
       margin-bottom: 10px;
@@ -62,7 +60,7 @@
     </div>
   </div>
 
-  <hr> <!-- Adiciona uma linha separadora -->
+  <hr> 
 
   <div class="row">
     <div class="col-md-12">
@@ -70,12 +68,11 @@
       <div class="skill">
            <p> {{ curriculo.habilidades }} <br> </p>
       </div>
-      
-      <!-- Adicione mais habilidades conforme necessário -->
+       <!-- Separação de habilidades -->
     </div>
   </div>
 
-  <hr> <!-- Adiciona uma linha separadora -->
+  <hr>
 
   <div class="row">
     <div class="col-md-12">
@@ -84,12 +81,12 @@
       <p>Período: {{ curriculo.periodo }}</p>
       <p>Empresa: {{ curriculo.empresa }} </p>
 
-      <!-- Adicione mais experiências conforme necessário -->
+      <!-- Separação de experiências -->
 
     </div>
   </div>
 
-  <hr> <!-- Adiciona uma linha separadora -->
+  <hr> 
 
   <div class="row">
     <div class="col-md-12">
@@ -98,13 +95,11 @@
       <p>{{ curriculo.ano }}</p>
       <p>{{ curriculo.instituicao }} </p>
 
-      <!-- Adicione mais informações educacionais conforme necessário -->
 
     </div>
   </div>
 </div>
 
-<!-- Adicione o link para o Bootstrap JS e o jQuery no final do corpo para melhor desempenho -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
