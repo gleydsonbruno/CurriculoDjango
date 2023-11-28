@@ -1,12 +1,9 @@
-<!-- formulario.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exibição de Currículo</title>
-    <!-- Inclua os links para os estilos do Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
 
@@ -24,7 +21,7 @@
 
         .card {
             height: 300px;
-            max-width: 250px; /* Ajuste conforme necessário */
+            max-width: 250px; 
             max-height: 300px;
             margin: auto;
             
@@ -39,46 +36,33 @@
             text-align: center;
         }
 
-        /* Adiciona espaçamento na parte inferior da página */
         body {
-            margin-bottom: 40px; /* Ajuste conforme necessário */
-            background-color: #b7c0b9; /* Cor de fundo cinza claro */
+            margin-bottom: 40px; 
+            background-color: #b7c0b9; 
             font-family: 'Roboto Condensed', sans-serif;
         }
 
         .page-container {
-            background-color: #ffffff; /* Cor de fundo branco */
-            padding: 20px; /* Adiciona espaçamento interno ao contêiner principal */
-            border-radius: 10px; /* Borda arredondada para estética */
-            box-shadow: 0 0 10px rgba(230, 10, 10, 0.1); /* Sombra suave para efeito de elevação */
-        }
-
-        .navbar {
-            /* Estilos para a barra de navegação */
-        }
-
-        .container-content {
-            /* Estilos para o contêiner do conteúdo da página */
+            background-color: #ffffff; 
+            padding: 20px; 
+            border-radius: 10px; 
+            box-shadow: 0 0 10px rgba(230, 10, 10, 0.1);
         }
 
         .custom-text {
-            /* Estilos para o texto personalizado */
             margin-top: 20px;
             margin-bottom: 20px;
             text-align: center;
         }
 
         .custom-search {
-            /* Estilos para a barra de pesquisa personalizada */
             margin-top: 30px;
             margin-bottom: 50px;
             text-align: center;
         }
-
-        /* Estilos para a barra de pesquisa */
         .custom-search .input-group {
-            max-width: 700px; /* Defina a largura máxima da barra de pesquisa */
-            margin: 0 auto; /* Centraliza a barra de pesquisa horizontalmente */
+            max-width: 700px; 
+            margin: 0 auto;
         }
        
         .form-control.form-control-sm {
@@ -137,6 +121,15 @@
             padding: 0;
         }
 
+        .carousel-control-prev, .carousel-control-next {
+            color: #000;
+            background-color: #000;
+            width: 5%;
+            height: 10%;
+            position: absolute;
+            top: 40%;
+        }
+
     </style>
 </head>
 <body>
@@ -144,7 +137,7 @@
 <div class="container mt-5 page-container">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
         <div class="container">
-            <!-- Logo ou texto no canto esquerdo -->
+            <!-- Logo  -->
             <a class="navbar-brand" href="#">PROIF</a>
     
             <!-- Botão de colapso para dispositivos móveis -->
@@ -170,9 +163,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'formulario' %}">Participar</a>
                     </li>
-                    <li class="nav-item">
+                    <!--<li class="nav-item">
                         <a class="nav-link" href="tela_login\templates\registro\login.html">Login</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>
@@ -186,11 +179,11 @@
             <p>Motivando Pessoas, Cultivando Talentos</p>
         </div>
     
-        <!-- Barra de pesquisa personalizada -->
+        <!-- Barra de pesquisa  -->
         <div class="custom-search">
             <form method="get" action="{% url 'listar_curriculos' %}">
                 <div class="input-group">
-                    <input type="text" name="q" class="form-control form-control-sm" placeholder="Pesquisar...">
+                    <input type="search" name="termo" value="{{ request.GET.termo }}" class="form-control form-control-sm" placeholder="Pesquisar...">
                     <div class="input-group-append">
                         <button class="btn btn-outline-secondary btn-sm" type="submit">Pesquisar</button>
                     </div>
@@ -213,6 +206,8 @@
                                     <div class="card border-primary">
                                         {% if curriculo.foto %}
                                             <img src="{{ curriculo.foto.url }}" class="foto" alt="Foto do Currículo">
+                                        {% else %}
+                                            <img src="/media/fotos/sem_foto.png" class="foto" alt="Foto do Currículo">
                                         {% endif %}
                                         <div class="card-body">
                                             <hr class="hr-card">
@@ -221,7 +216,6 @@
                                             <p class="card-text"><strong>Sobre mim:</strong> {{ curriculo.resumo }}</p>
                                             <p class="card-text"><strong>Habilidades:</strong> {{ curriculo.habilidades }}</p>
                                             
-                                            <!-- Adicione outros campos do seu modelo aqui -->
                                             
 
                                         </div>
@@ -250,7 +244,7 @@
     {% endif %}
 </div>
 
-<!-- Inclua os scripts do Bootstrap no final do arquivo -->
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

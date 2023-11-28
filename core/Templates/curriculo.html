@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,13 +35,59 @@
     .foto {
         width: 250px;
         height: 250px;
+        border: 4px solid #000;
+        border-radius: 10%;
     }
 
     .col-md-9 {
-        position: relative;    
-        padding-left: 100px;
+      position: relative;    
+      padding-left: 100px;
+      
     }
 
+    p {
+      margin-bottom: 0;
+      
+      
+    }
+
+    h1, h2, h3, h4 {
+      margin-bottom: 0;
+    }
+
+    .ano {
+      font-style: italic;
+      color: grey;
+      font-size: 14px !important;
+      margin-top: 0;
+      margin-bottom: 4px;
+    }
+
+    .funcao {
+      margin-top: 3px;
+      padding: 0 5px 0 5px;
+      border: 1px solid #000;
+      border-radius: 10px;
+      width: max-content;
+      color: #3f473f;
+    }
+
+    .title {
+      text-align: center;
+    }
+
+    .local {
+      font-weight: bold;
+    }
+
+    .local-2 {
+      font-weight: 200;
+      font-size: 16px;
+    }
+
+    hr {
+      margin: 10px 0 10px 0;
+    }
 
   </style>
 </head>
@@ -51,12 +96,17 @@
 <div class="container main-container mx-auto w-80">
   <div class="row">
     <div class="col-md-3">
+      {% if curriculo.foto %}
         <img src="{{ curriculo.foto.url }}" class="foto" alt="Foto do Currículo">
+      {% else %}
+        <img src="/media/fotos/sem_foto.png" class="foto" alt="Foto do Currículo">
+      {% endif %}
     </div>
     <div class="col-md-9">
       <h2>{{ curriculo.nome }} {{ curriculo.sobrenome }}</h2>
-      <p>Email: {{ curriculo.email }}</p>
-      <p>Telefone: {{ curriculo.telefone }}</p>
+      <hr>
+      <p class="local">Email: <span class="local-2">{{ curriculo.email }}</span></p>
+      <p class="local">Telefone: <span class="local-2">{{ curriculo.telefone }}</span></p>
     </div>
   </div>
 
@@ -66,7 +116,7 @@
     <div class="col-md-12">
       <h2>Habilidades</h2>
       <div class="skill">
-           <p> {{ curriculo.habilidades }} <br> </p>
+           <p class="funcao"> {{ curriculo.habilidades }} <br> </p>
       </div>
        <!-- Separação de habilidades -->
     </div>
@@ -77,9 +127,9 @@
   <div class="row">
     <div class="col-md-12">
       <h2>Experiência Profissional</h2>
-      <h4>{{ curriculo.cargo }}</h4>
-      <p>Período: {{ curriculo.periodo }}</p>
-      <p>Empresa: {{ curriculo.empresa }} </p>
+      <h4 class="funcao">{{ curriculo.cargo }}</h4>
+      <p class="ano">Período: {{ curriculo.periodo }}</p>
+      <p class="local"> Empresa: <span class="local-2">{{ curriculo.empresa }}</span> </p>
 
       <!-- Separação de experiências -->
 
@@ -91,9 +141,9 @@
   <div class="row">
     <div class="col-md-12">
       <h2>Formação</h2>
-      <h4>{{ curriculo.formacao }}</h4>
-      <p>{{ curriculo.ano }}</p>
-      <p>{{ curriculo.instituicao }} </p>
+      <h4 class="funcao">{{ curriculo.formacao }}</h4>
+      <p class="ano">Conclusão: {{ curriculo.ano }}</p>
+      <p class="local" >Instituição: <span class="local-2">{{ curriculo.instituicao }} </span> </p>
 
 
     </div>

@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import CurriculoForm, Curriculo
 from django.views.generic import ListView
+from django.db.models import Q
 
 
 def index (request):
@@ -37,3 +38,22 @@ class CurriculoListView(ListView):
         if query:
             return Curriculo.objects.filter(nome__icontains=query)
         return Curriculo.objects.all()
+
+class Busca(ListView):
+    model = Curriculo
+    template_name = 'listar_curriculos.html'
+
+    def get_queryset(self):
+        termo = self.request.GET.get('termo')
+        qs = super().get_queryset()
+        if not termo:
+            return qs
+        
+        qs = qs.filter(
+            Q(nome__icontains=termo) | 
+            Q(habilidades__icontains=termo) | 
+            Q(resumo__icontains=termo) 
+        )
+
+        return qs
+    
